@@ -101,13 +101,12 @@ for(i in 1 : 100){
 ###Pregunta 7#######
 ####################
 for(i in (listaDeNumeros)){
-  print(paste("cuento ",i," valor"))
+  print(paste("numero ",i," de la lista"))
 }
 
-###################
-###Pregunta 8#######
 ####################
-
+### Pregunta 8######
+####################
 for(i in listaDeNumeros){
   if (i%%2==0){
     print("par")
@@ -115,3 +114,86 @@ for(i in listaDeNumeros){
     print("impar")
   }
 }
+
+####################
+### Pregunta 9 #####
+####################
+#Determinar_Ganador: int int int -> String
+#Def Determinar_Ganador: Gana la opcion con mayor cantidad de votos, 
+#en caso de que exista quorum (voto el 50% + 1 del total) y hay empate
+#gana la opcion "Si", en caso de que no exista quorum gana aquel con 
+#la mayor cantidad de votos siempre y cuando sea mayor al 30% del total 
+#del padron electoral, de lo contrario gana la opcion "No".
+#Ejemplo: Determinar_Ganador(100,51,49)->"Si"
+
+
+Determinar_Ganador<-function(total,votosSI,votosNO){
+  if (votosSI+votosNO>total){
+    "votaciones alteradas"
+  }else if (votosSI>=votosNO && votosSI>=0.3*total){
+    paste ("Si")
+  }else {
+    paste ("No")
+  }
+}
+
+Determinar_Ganador(100,100,50)
+Determinar_Ganador(100,51,49)
+Determinar_Ganador(100,25,3)
+
+
+####################
+### Pregunta 10 ####
+####################
+Suma<-function(a,b){
+  a+b
+}
+Suma(3,4)
+#R: 7
+##RESTA##
+Resta<-function(a,b){
+  a-b
+}
+Resta(3,4)
+##Multiplicacion##
+Multiplicar<-function(a,b){
+  a*b
+}
+Multiplicar(3,4)
+
+##Division##
+Dividir<-function(a,b){
+  a/b
+}
+Dividir(3,4)
+
+
+####################
+### Pregunta 11 ####
+####################
+#########CIRCULO################
+#Anillo: double double -> double
+#Anillo: Diferencia de Areas
+#Anillo: double double -> double
+#Anillo: Diferencia de ?reas
+AreaAnillo<-function(radio1,radio2){
+  abs((pi*radio1^2)-(pi*(radio2^2)))
+}
+AreaAnillo(7,3)
+AreaAnillo(6,2)
+#Ejemplo1:AreaAnillo(8,3)
+#[1] 125.6637
+#Ejemplo2: AreaAnillo(5,2)
+#[1] 100.531
+#########RECTANGULO#############
+AreaRectangulo<-function(base1,altura1,base2,altura2){
+  abs((base1*altura1)-(base2*altura2))
+}
+AreaRectangulo(20,10,10,5)
+#Respuesta 150
+
+###OPCIONAL###
+for( i in listaDeNumeros){
+  print(i)
+}
+#la ventaja es que no de sebe poner maualmente cada dato nuevamente sino que solo se coloca el nombre de la lista

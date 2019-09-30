@@ -13,35 +13,31 @@ listaDeNumeros <- list(2,5,6,2,1,5,6,10,11,20,15)
 listaDeNumeros[5]
 
 ###############
-##ejercicio 1##
+## PREGUNTA 1 ##
 ###############
 #si se coloca un cero
-
 listaDeNumeros[0]
-#list()
-##si se coloca un numro menor a la lista
+#list(), es porque no existe.
+
+##si se coloca un numro menor a la lista:
 listaDeNumeros[9]
-
 #[[1]]
-#[1] 11, entrega el valor 11 que corresponde a la posiciÃƒÂ³n 
-##si se coloca un numero mayor a la lista
+#[1] 11, entrega el valor 11 que corresponde a la posicion.
+
+##si se coloca un numero mayor a la lista.
 listaDeNumeros[12]
-
 #[[1]]
-#NULL , es decir no existe
+#NULL , es decir no existe la pisicion en la lista.
 
 listaDeNumeros[-6]
-
 #[[1]]
-#[1] 2
+#[1] 2, entrega el numero 2 ya que es el primer numero de la lista.
 
 
 ###################
-###Ejercicio 2#####
+### PREGUNTA 2 #####
 ###################
-
 unlist(listaDeNumeros[5])
-
 if(listaDeNumeros[5]>0){
   print("VERDADERO")
 }
@@ -52,7 +48,7 @@ if(listaDeNumeros[2]>3){
 }
 #[1] "VERDADERO" ya que el puesto dos corresponde al numero 5 y es mayor a 3
 
-###Ejemplo Profe Amaru####
+########Ejemplo Profe Amaru#######
 
 if(listaDeNumeros[5]+1>0){
   print("VERDADERO")
@@ -64,45 +60,44 @@ if(unlist(listaDeNumeros[5])+1>0){
 }
 #verdadero 
 
-###################
-###Pregunta 3#######
-####################
 
+###################
+###PREGUNTA 3#######
+####################
 listaDeNumeros[5] <- 12
 #se asigna el valor 12 a la a la posicion anterior el cual valia 1 anteriormente ahora vale 12
 
-#####################
-###Pregunta 4######3
-##################
 
+#####################
+###PREGUNTA 4######
+##################
 length(listaDeNumeros)
 # Respuesta es 11 ya que indica este comando el numero de asignaciones de la lista o la longitud de la lista el cual son 11
 
-###################
-###Pregunta 5#######
-####################
 
+###################
+###PREGUNTA 5#######
+####################
 5:11
 listaDeNumeros[5] <- 12
 length(listaDeNumeros)
 valorInicial <- 5 
 valorFinal <- 11
-
 #[1]  5  6  7  8  9 10 11
+
 #si se invierte ocurre:
 valorInicial <- 11 
 valorFinal <- 5
 11:5
 #[1] 11 10  9  8  7  6  5
 
-# sis e prueba el le length(nombre_variable)
+# si se prueba el le length(nombre_variable)
 length(listaDeNumeros):6
 #se acorta la longitud de la lista a solo 6 numeros  que corresponde a mi valor inicial
 
 ###################
-###Pregunta 6#######
+###PREGUNTA 6#######
 ####################
-
 for(i in 1 : 100){
   print(paste("cuento ",i," misisipis"))
 }
@@ -212,26 +207,155 @@ for(i in 1 : 100){
 
 
 ###################
-###Pregunta 7#######
+### PREGUNTA 7######
 ####################
-
 > for(i in (listaDeNumeros)){
-+   print(paste("cuento ",i," valor"))
++   print(paste("numero ",i,"de la lista"))
 + }
-[1] "cuento  2  valor"
-[1] "cuento  5  valor"
-[1] "cuento  6  valor"
-[1] "cuento  2  valor"
-[1] "cuento  12  valor"
-[1] "cuento  5  valor"
-[1] "cuento  6  valor"
-[1] "cuento  10  valor"
-[1] "cuento  11  valor"
-[1] "cuento  20  valor"
-[1] "cuento  15  valor"
+[1] "numero  2 de la lista"
+[1] "numero  5 de la lista"
+[1] "numero  6 de la lista"
+[1] "numero  2 de la lista"
+[1] "numero  1 de la lista"
+[1] "numero  5 de la lista"
+[1] "numero  6 de la lista"
+[1] "numero  10 de la lista"
+[1] "numero  11 de la lista"
+[1] "numero  20 de la lista"
+[1] "numero  15 de la lista"
+# se logra colocar los numeros de la lista colocando el nombre asignado a esta en el comando.
+
+###################
+### PREGUNTA 8######
+####################
+for(i in listaDeNumeros){
+  if (i%%2==0){
+    print("par")
+  }else{
+    print("impar")
+  }
+}
+[1] "par"
+[1] "impar"
+[1] "par"
+[1] "par"
+[1] "impar"
+[1] "impar"
+[1] "par"
+[1] "par"
+[1] "impar"
+[1] "par"
+[1] "impar"
+# se asigna si es par o inpar los numeros de la lista. 
 
 
+####################
+### Pregunta 9 #####
+####################
+#Determinar_Ganador: int int int -> String
+#Def Determinar_Ganador: Gana la opcion con mayor cantidad de votos, 
+#en caso de que exista quorum (voto el 50% + 1 del total) y hay empate
+#gana la opcion "Si", en caso de que no exista quorum gana aquel con 
+#la mayor cantidad de votos siempre y cuando sea mayor al 30% del total 
+#del padron electoral, de lo contrario gana la opcion "No".
+#Ejemplo: Determinar_Ganador(100,51,49)->"Si"
 
+Determinar_Ganador<-function(total,votosSI,votosNO){
+  if (votosSI+votosNO>total){
+    "votaciones alteradas"
+  }else if (votosSI>=votosNO && votosSI>=0.3*total){
+    paste ("Si")
+  }else {
+    paste ("No")
+  }
+}
+Ejemplos:
+Determinar_Ganador(100,100,50)
+#Votaciones alteradas
+Determinar_Ganador(100,51,49)
+#SI
+Determinar_Ganador(100,25,3)
+#NO
 
+Respuesta: 
+*LA PRIMERA CONDICIÓN: si existen más personas votando que el total de persona esta erronea la votacion.
+*LA SEGUNDA: mientras la cantidad de votosSI sea mayor que la de votosNO va a ganar el SI, siempre y cuando tenga al menos un 30% de los votos.
+*LA TERCERA: en cualquiera de los otros casos (sea mayor el NO, o no haya quorum) va a ganar el "NO"
 
+####################
+### Pregunta 10 ####
+####################
+Suma<-function(a,b){
+  a+b
+}
+Suma(3,4)
+#R: 7 
+
+#####RESTA#####
+Resta<-function(a,b){
+  a-b
+}
+Resta(3,4)
+#R: -1
+
+###Multiplicacion###
+Multiplicar<-function(a,b){
+  a*b
+}
+Multiplicar(3,4)
+#R:12
+
+##Division##
+Dividir<-function(a,b){
+  a/b
+}
+Dividir(3,4)
+#R:0.75
+
+####################
+### Pregunta 11 ####
+####################
+#Anillo: double double -> double
+#Anillo: Diferencia de Areas
+
+AreaAnillo<-function(radio1,radio2){
+  abs((pi*radio1^2)-(pi*(radio2^2)))
+}
+
+AreaAnillo(7,3)
+AreaAnillo(6,2)
+#Ejemplo1:AreaAnillo(8,3)
+#[1] 125.6637
+#Ejemplo2: AreaAnillo(5,2)
+#[1] 100.531
+
+#########RECTANGULO#############
+#Rectangulo: double double -> double
+#Rectangulo: Diferencia de Areas
+
+AreaRectangulo<-function(base1,altura1,base2,altura2){
+  abs((base1*altura1)-(base2*altura2))
+}
+#Ejemplo:
+AreaRectangulo(20,10,10,5)
+#Respuesta 150
+
+####################
+######Opcipnal######
+####################
+for( i in listaDeNumeros){
+print(i)
+}
+[1] 2
+[1] 5
+[1] 6
+[1] 2
+[1] 1
+[1] 5
+[1] 6
+[1] 10
+[1] 11
+[1] 20
+[1] 15
+##la ventaja es que no de sebe poner maualmente cada dato nuevamente sino que solo se coloca el nombre de la lista y se asigna como i cada valor, entonces si se quiere agregar algo el numero sera representado por la i.
 
