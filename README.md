@@ -341,7 +341,7 @@ AreaRectangulo(20,10,10,5)
 #Respuesta 150
 
 ####################
-######Opcipnal######
+###### OPCIONAL ######
 ####################
 for( i in listaDeNumeros){
 print(i)
@@ -357,5 +357,5 @@ print(i)
 [1] 11
 [1] 20
 [1] 15
-##la ventaja es que no de sebe poner maualmente cada dato nuevamente sino que solo se coloca el nombre de la lista y se asigna como i cada valor, entonces si se quiere agregar algo el numero sera representado por la i.
+##la ventaja es que no se debe poner maualmente cada dato nuevamente sino que solo se coloca el nombre de la lista y se asigna como i cada valor, entonces si se quiere agregar algo el numero sera representado por la i.
 
